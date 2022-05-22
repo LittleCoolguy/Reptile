@@ -1,0 +1,42 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style type="text/css">
+        TABLE {
+        border-collapse: collapse;
+        border-left: solid 1 #000000;
+        border-top: solid 1 #000000;
+        padding: 5px;
+    }
+
+    TH {
+        border-right: solid 1 #000000;
+        border-bottom: solid 1 #000000;
+    }
+
+    TD {
+        font: normal;
+        border-right: solid 1 #000000;
+        border-bottom: solid 1 #000000;
+    }</style>
+</head>
+<body bgcolor="#FFF8DC">
+<div align="center"><br/><br/>
+    <table border="1">
+        <tr>
+            <th>阅读量</th>
+            <th>评论数</th>
+            <th>标题</th>
+            <th>发布时间</th>
+        </tr>
+        <tr th:each="review:${reviews}">
+            <td th:text="${review.readingNum}"></td>
+            <td th:text="${review.commentNum}"></td>
+            <td th:text="${review.title}"></td>
+            <td th:text="${review.time}"></td>
+        </tr>
+    </table>
+    <br/><br/></div>
+</body>
+</html>
